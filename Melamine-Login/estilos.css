@@ -1,0 +1,206 @@
+/* ---------- Reset mínimo ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body {
+  height: 100%;
+  font-family: "Poppins", system-ui, Arial, sans-serif;
+  background: #000;
+  overflow: hidden;
+}
+
+/* ---------- Fondo de video ---------- */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+  filter: brightness(0.6) contrast(1.1) saturate(1.05);
+  will-change: transform;
+}
+
+/* ---------- Capa de oscurecimiento sutil ---------- */
+.bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
+}
+
+/* ---------- Contenedor principal ---------- */
+.login-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
+}
+
+/* ---------- Card (glassmorphism optimizado) ---------- */
+.login-wrap {
+  position: relative;
+  z-index: 2;
+  max-width: 420px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  width: 100%;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  transition: transform .3s ease, box-shadow .25s;
+}
+
+.login-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* ---------- Header ---------- */
+.login-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  margin-bottom: 1.2rem;
+}
+
+.login-header h1 {
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.moon-icon { font-size: 1.4rem; }
+
+/* ---------- Form ---------- */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-label {
+  font-size: .85rem;
+  color: rgba(255,255,255,0.8);
+  font-weight: 600;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon input {
+  width: 100%;
+  padding: .9rem 3rem .9rem 1rem;
+  border-radius: 40px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all .2s;
+}
+
+.input-with-icon input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.input-with-icon .icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+}
+
+.input-with-icon input:focus {
+  border-color: rgba(255,255,255,0.4);
+  box-shadow: 0 0 8px rgba(255,255,255,0.2);
+}
+
+/* ---------- Extras ---------- */
+.row-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: .9rem;
+  color: rgba(255,255,255,0.85);
+}
+
+.btn-primary.full {
+  margin-top: .8rem;
+  width: 100%;
+  padding: .9rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(90deg, #ffffff, #f5f5f5);
+  color: #111;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: transform .1s ease, box-shadow .15s;
+}
+
+.btn-primary.full:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.muted {
+  text-align: center;
+  margin-top: .9rem;
+  color: rgba(255,255,255,0.75);
+}
+
+.bold-link {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.login-msg {
+  margin-top: .6rem;
+  min-height: 1.2rem;
+  font-weight: 700;
+  color: #ffd;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 1.5rem;
+    border-radius: 14px;
+  }
+  .login-header h1 {
+    font-size: 1.6rem;
+  }
+}
+/* ---------- Enlace "¿Olvidaste tu contraseña?" ---------- */
+#forgotLink {
+  color: #ffd166;                /* Color base: un amarillo cálido */
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .2s ease, transform .2s ease;
+}
+
+#forgotLink:hover,
+#forgotLink:focus {
+  color: #ff9f1c;                /* Color cuando pasas el mouse o haces foco */
+  text-decoration: underline;
+  transform: translateY(-1px);
+}

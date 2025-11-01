@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login | Melamine Jonas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body class="login-body">
+  
+  <!-- 🎬 Video de fondo -->
+ <video autoplay muted loop id="bg-video">
+  <source src="media/video-otp.mp4" type="video/webm">
+  <source src="media/video-otp.mp4" type="video/mp4">
+</video>
+<div class="bg-overlay"></div>
+
+  <!-- 🌈 Capas opcionales para efectos -->
+  <div class="bg-anim">
+    <div class="bg-layer layer-1"></div>
+    <div class="bg-layer layer-2"></div>
+  </div>
+
+  <!-- 🧱 Contenedor principal del login -->
+  <main class="login-wrap">
+    <div class="login-card">
+      <div class="login-header">
+        <h1>Jonas Melamine</h1>
+        <div class="moon-icon" aria-hidden="true">🪵</div>
+      </div>
+
+      <form id="loginForm" class="login-form" autocomplete="off" novalidate>
+        <div class="input-row">
+          <label class="input-label" for="username">Usuario</label>
+          <div class="input-with-icon">
+            <input id="username" name="username" type="text" placeholder="username" required />
+            <span class="icon user-icon" aria-hidden="true">👤</span>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <label class="input-label" for="password">Contraseña</label>
+          <div class="input-with-icon">
+            <input id="password" name="password" type="password" placeholder="Password" required />
+            <span class="icon lock-icon" aria-hidden="true">🔒</span>
+          </div>
+        </div>
+
+        <div class="row-between small">
+          <label class="checkbox">
+            <input type="checkbox" id="remember" />
+            <span>Recordarme</span>
+          </label>
+
+          <a href="#" id="forgotLink" class="small-link">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <button class="btn-primary full" type="submit">Ingresar</button>
+
+        <p class="muted">¿No tienes cuenta? <a href="#" class="bold-link">Registrarse</a></p>
+
+        <p id="loginMessage" class="login-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </main>
+
+  <script src="js/login.js"></script>
+</body>
+</html>
