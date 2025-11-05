@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cocina Interactiva - Melamine Jonas</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="pagina-cocina">
+
+  <!-- 🎥 Fondo de video -->
+  <video id="bg-video" autoplay loop muted playsinline>
+    <source src="media/video-otp.mp4" type="video/mp4">
+  </video>
+
+  <!-- 🧱 ENCABEZADO -->
+  <header>Melamine Jonas</header>
+
+  <!-- 💡 CONTENIDO PRINCIPAL (2 columnas) -->
+  <main class="cocina-layout">
+
+    <!-- 🧩 Sección izquierda: cocina interactiva -->
+    <section class="cocina">
+      <h2>Cocina Moderna Interactiva</h2>
+
+      <div class="cocina-container">
+        <img id="cocinaImg" src="media/cocina-cuarzo.jpeg" alt="Cocina Moderna">
+      </div>
+
+      <div class="color-selector">
+        <div class="color-btn cuarzo"
+             data-img="media/cocina-cuarzo.jpeg"
+             data-desc="Color cuarzo: elegante y moderno. Ideal para espacios amplios."></div>
+        <div class="color-btn gray"
+             data-img="media/cocina-gray.png"
+             data-desc="Color gris: sobrio y elegante. Perfecto para ambientes neutros."></div>
+        <div class="color-btn greige"
+             data-img="media/cocina-greige.png"
+             data-desc="Color greige: cálido y versátil, combina con tonos tierra."></div>
+        <div class="color-btn beige"
+             data-img="media/cocina-beige.png"
+             data-desc="Color beige: acogedor y luminoso, aporta confort visual."></div>
+      </div>
+
+      <p id="colorDesc" class="descripcion">
+        Color cuarzo: elegante y moderno. Ideal para espacios amplios.
+      </p>
+    </section>
+
+    <!-- 🧾 Sección derecha: información del producto -->
+    <aside class="panel-info">
+      <h3>Detalles del producto</h3>
+      <p><strong>Precio:</strong> S/ 1,200.00</p>
+      <p>Melamina resistente, textura natural, fácil de limpiar y con acabados premium.</p>
+      <p>Diseño modular adaptable a cualquier espacio, con opciones de colores personalizadas.</p>
+      <button class="btn-compra">🛒 Agregar al carrito</button>
+    </aside>
+
+  </main>
+
+  <!-- 🔙 Botón volver -->
+  <button class="btn-volver" onclick="window.location.href='index.html'">← Volver a galería</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

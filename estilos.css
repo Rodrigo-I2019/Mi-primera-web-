@@ -1,10 +1,11 @@
 /* ---------- Reset mínimo ---------- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html,body {
+html, body {
   height: 100%;
   font-family: "Poppins", system-ui, Arial, sans-serif;
-  background: #000;
-  overflow: hidden;
+  background: none; /* 👈 deja ver el video */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* ---------- Fondo de video ---------- */
@@ -203,4 +204,226 @@ html,body {
   color: #ff9f1c;                /* Color cuando pasas el mouse o haces foco */
   text-decoration: underline;
   transform: translateY(-1px);
+}
+
+ /*NUEVOOOOO --------------------------------------------------------------- */
+
+/* ==============================
+   🏠 PÁGINA DE COCINA INTERACTIVA
+============================== */
+
+body.pagina-cocina {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background: #000;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* 🎥 Fondo de video */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2; /* ⬅️ antes -1, lo bajamos para que no tape la capa oscura */
+  filter: brightness(0.6);
+}
+
+/* 🌑 Capa oscura encima del video */
+.pagina-cocina::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: -1;
+}
+
+/* Encabezado */
+.pagina-cocina header {
+  text-align: center;
+  font-size: 2rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== Contenedor principal ===== */
+main.cocina {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 3rem 1rem;
+
+  /* 🔹 Ajustes nuevos */
+  max-width: 800px;
+  margin-left: 5vw; /* 👈 mueve el bloque a la izquierda */
+  margin-right: auto;
+
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Imagen ===== */
+.cocina-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.cocina-container img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  transition: opacity 0.4s ease-in-out, transform 0.3s ease;
+}
+
+/* ===== Botones de color ===== */
+.color-selector {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.color-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.color-btn:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+/* 🎨 Colores */
+.cuarzo { background: #eaeaea; }
+.gray { background: #8b8b8b; }
+.greige { background: #c8bca9; }
+.beige { background: #e6d3b1; }
+
+/* Descripción */
+.descripcion {
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 1rem;
+  max-width: 600px;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== Botón volver ===== */
+.btn-volver {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #ff7b00;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 0.7rem 1.3rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 2;
+}
+
+.btn-volver:hover {
+  background: #ff9900;
+}
+
+
+/*NUEVO ESTILO DE COCINA.HTML CON PANEL DE INFORMACION DE COMPRA*/
+
+.cocina-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cocina {
+  flex: 2; /* más espacio a la cocina */
+}
+
+.panel-info {
+  flex: 1;
+  background: rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px);
+}
+
+.panel-info h3 {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: .5rem;
+}
+
+.btn-compra {
+  background: #ff7b00;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.3rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: 600;
+}
+
+.btn-compra:hover {
+  background: #ff9900;
+}
+
+
+
+/*PARA QUITAR LOS BOTONES DE LA IMAGEN EN LA PAGINA*/
+
+/* 🚫 Quitar controles automáticos del navegador sobre videos */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+video::-internal-media-controls-overlay-cast-button {
+  display: none !important;
+}
+
+/* 🔒 Evita clics o interacciones sobre el video */
+video {
+  pointer-events: none;
+  user-select: none;
 }
