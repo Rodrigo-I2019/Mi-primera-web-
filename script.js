@@ -206,4 +206,24 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Nuevooooooooooooooooooooooooooooooooo
+
+
+// ✨ Mostrar elementos con animación cuando aparecen en pantalla
+document.addEventListener("DOMContentLoaded", () => {
+  const faders = document.querySelectorAll(".fade-in");
+
+  function mostrarAnimacion() {
+    faders.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add("visible");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", mostrarAnimacion);
+  mostrarAnimacion();
+});
+
 

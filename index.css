@@ -94,3 +94,117 @@
   .hero h1 { font-size: 1.7rem; }
   .galeria { grid-template-columns: 1fr; padding: 1rem; }
 }
+
+/*NUEVOOOOOOOOOOOOO*/
+
+/* ==============================
+   ✨ Texto general más claro y legible
+============================== */
+
+/* Texto principal general */
+body, h1, h2, h3, p, strong, footer {
+  color: #f5f5f5; /* 🔹 blanco suave para alto contraste */
+}
+
+/* Encabezado */
+header {
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Títulos dentro de las secciones */
+h1, h2, h3 {
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* Descripciones */
+p {
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  color: #ddd;
+  background: rgba(0,0,0,0.6);
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* Beneficios */
+section.fade-in h2 {
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+section.fade-in p {
+  color: #e8e8e8;
+}
+
+/* Opiniones */
+section.fade-in strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Botones */
+.btn-compra {
+  background: linear-gradient(90deg, #ffa600, #ffcc33);
+  color: #111;
+  border: none;
+  padding: 0.9rem 1.4rem;
+  border-radius: 25px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-compra:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(255, 193, 7, 0.4);
+}
+
+/* Info de las tarjetas */
+.card-proyecto .info {
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+}
+
+.card-proyecto .info p {
+  color: #f0f0f0;
+}
+
+.card-proyecto .info h3 {
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* ==============================
+   📱 Botón flotante de WhatsApp
+============================== */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366; /* color oficial de WhatsApp */
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  line-height: 60px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  z-index: 10;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(37, 211, 102, 0.6);
+}

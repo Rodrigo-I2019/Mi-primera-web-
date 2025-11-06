@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Melamine - Jonas</title>
-    <link rel="stylesheet" href="estilos.css" />
+  <link rel="stylesheet" href="estilos.css" />
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
@@ -12,16 +12,18 @@
   <video autoplay loop muted playsinline>
     <source src="media/video-otp.mp4" type="video/mp4" />
   </video>
+  <div class="overlay"></div>
 
   <header>Melamine Jonas</header>
 
-  <section class="hero">
+  <!-- 🏡 Sección de presentación -->
+  <section class="hero fade-in">
     <h1>Proyectos de Melamina</h1>
-    <p>Elige el diseño que te gusta.</p>
+    <p>Elige el diseño que te gusta. Fabricamos con precisión y estilo para cada espacio de tu hogar.</p>
   </section>
 
   <!-- 🔹 GALERÍA DE PROYECTOS -->
-  <section class="galeria">
+  <section class="galeria fade-in">
     <!-- 🔸 Proyecto 1 -->
     <div class="card-proyecto" onclick="abrirDetalle('cocina')">
       <img src="media/cocina-cuarzo.jpeg" alt="Cocina Moderna" />
@@ -59,17 +61,92 @@
     </div>
   </section>
 
-  <footer>© 2025 MelaminePro - Diseños personalizados en melamina</footer>
+  <!-- 🧱 NUEVA SECCIÓN: Beneficios -->
+  <section class="fade-in" style="text-align:center; padding:3rem 1rem; background:rgba(0,0,0,0.4);">
+    <h2>¿Por qué elegir Melamine Jonas?</h2>
+    <p style="max-width:700px; margin:1rem auto; color:#ddd;">
+      Diseñamos muebles que combinan <strong>elegancia</strong>, <strong>durabilidad</strong> y <strong>funcionalidad</strong>. 
+      Nuestro compromiso es crear ambientes que reflejen tu estilo y aprovechen al máximo cada espacio de tu hogar.
+    </p>
+    <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:2rem; margin-top:2rem;">
+      <div style="max-width:250px;">
+        <h3>🪵 Material Premium</h3>
+        <p>Usamos melamina de alta densidad para garantizar acabados de lujo.</p>
+      </div>
+      <div style="max-width:250px;">
+        <h3>🎨 Personalización Total</h3>
+        <p>Elige colores, texturas y medidas según tu gusto.</p>
+      </div>
+      <div style="max-width:250px;">
+        <h3>⚡ Entrega Rápida</h3>
+        <p>Diseñamos, fabricamos e instalamos en tiempo récord.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 💬 NUEVA SECCIÓN: Opiniones -->
+  <section class="fade-in" style="padding:3rem 1rem; text-align:center;">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:2rem; margin-top:2rem;">
+      <div style="max-width:300px; background:rgba(255,255,255,0.1); padding:1.5rem; border-radius:12px;">
+        <p>“Excelente trabajo, la cocina quedó espectacular. Muy recomendados.”</p>
+        <strong>- María G.</strong>
+      </div>
+      <div style="max-width:300px; background:rgba(255,255,255,0.1); padding:1.5rem; border-radius:12px;">
+        <p>“Me hicieron un closet a medida con acabados de primera. Puntuales y responsables.”</p>
+        <strong>- Luis P.</strong>
+      </div>
+      <div style="max-width:300px; background:rgba(255,255,255,0.1); padding:1.5rem; border-radius:12px;">
+        <p>“Atención personalizada, y el diseño del mueble TV fue justo lo que quería.”</p>
+        <strong>- Camila R.</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📞 NUEVA SECCIÓN: Contacto -->
+  <section class="fade-in" style="padding:3rem 1rem; text-align:center; background:rgba(0,0,0,0.4);">
+    <h2>Contáctanos</h2>
+    <p style="max-width:700px; margin:1rem auto; color:#ccc;">
+      ¿Tienes una idea? Nosotros la convertimos en realidad.  
+      Escríbenos para cotizar tu mueble personalizado.
+    </p>
+<button class="btn-compra" style="margin-top:1rem;"
+  onclick="window.open('https://wa.me/51902750908?text=¡Hola!%20Estoy%20interesado%20en%20un%20proyecto%20de%20melamina%20personalizado.', '_blank')">
+  💬 Enviar mensaje por WhatsApp
+</button>
+  </section>
+
+  <!-- ⚙️ FOOTER -->
+  <footer class="fade-in">
+    © 2025 Melamine Jonas — Diseños personalizados en melamina.
+  </footer>
 
   <script>
     // 👉 En el futuro, aquí puedes conectar cada tarjeta con una página o detalle
     function abrirDetalle(nombre) {
       if (nombre === 'cocina') {
-        window.location.href = 'cocina.html'; // o login.html si deseas
+        window.location.href = 'cocina.html';
       } else {
         alert('Sección "' + nombre + '" próximamente disponible.');
       }
     }
   </script>
+  <script>
+  // ✨ Animación al hacer scroll
+  const elements = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  elements.forEach(el => observer.observe(el));
+</script>
+<a href="https://wa.me/51902750908?text=¡Hola!%20Estoy%20interesado%20en%20un%20proyecto%20de%20melamina%20personalizado."
+   class="whatsapp-float" target="_blank">
+  💬
+</a>
 </body>
 </html>
