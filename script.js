@@ -209,21 +209,17 @@ document.addEventListener("DOMContentLoaded", () => {
 // Nuevooooooooooooooooooooooooooooooooo
 
 
-// ✨ Mostrar elementos con animación cuando aparecen en pantalla
+/* =======================================================
+   💬 BOTÓN FLOTANTE DE WHATSAPP
+======================================================= */
 document.addEventListener("DOMContentLoaded", () => {
-  const faders = document.querySelectorAll(".fade-in");
+  const whatsappBtn = document.createElement("a");
+  whatsappBtn.href = "https://wa.me/51902750908"; // 👈 tu número con +51
+  whatsappBtn.target = "_blank";
+  whatsappBtn.classList.add("whatsapp-float");
+  whatsappBtn.innerHTML = "💬";
 
-  function mostrarAnimacion() {
-    faders.forEach((el) => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) {
-        el.classList.add("visible");
-      }
-    });
-  }
-
-  window.addEventListener("scroll", mostrarAnimacion);
-  mostrarAnimacion();
+  document.body.appendChild(whatsappBtn);
 });
 
 
